@@ -17,6 +17,7 @@ def get_organization_by_symbol(search_name):
     data = []
     for x in range(len(stock_data["quotes"])):
         temp_dict = {
+            "id": x,
             "name": stock_data["quotes"][x]["longname"],
             "symbol": stock_data["quotes"][x]["symbol"],
         }
