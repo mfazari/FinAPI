@@ -28,7 +28,7 @@ def get_organization_by_symbol(search_name):
 
 
 @manager_page.route("/v1/manager/stock/<symbol>", methods=["GET"])
-def get_stock_by_symbol(symbol):
+def get_chart_data_by_symbol(symbol):
     data = yf.download(tickers=symbol, period='3mo', interval='1d', rounding=True)
     print(data)
     dict = data.to_json(orient='table')
