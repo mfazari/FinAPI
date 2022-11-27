@@ -32,5 +32,8 @@ def get_chart_data_by_symbol(symbol):
     data = yf.download(tickers=symbol, period='3mo', interval='1d', rounding=True)
     print(data)
     dict = data.to_json(orient='table')
+    # dict["max_high"] = max(data.High)
+    # dict["min_high"] = min(data.High)
+    # print(dict)
 
     return dict
