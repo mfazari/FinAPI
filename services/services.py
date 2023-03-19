@@ -28,5 +28,9 @@ class ManagerService:
         data_dict["min_high"] = min(data_pandas.High)
         return data_dict
 
+    def get_news(self, symbol):
+        symbol_data = yf.Ticker(symbol)
+        news_data = symbol_data.get_news()
+        return news_data
 
 manager_service = ManagerService()

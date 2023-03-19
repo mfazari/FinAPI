@@ -19,3 +19,9 @@ def get_organization_by_symbol(search_name):
 def get_chart_data_by_symbol(symbol):
     data = manager_service.get_chart_data(symbol)
     return data
+
+
+@manager_page.route("/v1/manager/news/<symbol>", methods=["GET"])
+def get_news_by_symbol(symbol):
+    data = manager_service.get_news(symbol)
+    return data
